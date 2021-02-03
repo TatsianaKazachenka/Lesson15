@@ -14,13 +14,13 @@ public class AccountTest extends BaseTest {
 
     @Test
     public void createContactTest() {
-        mainPage.login();
-        accountListPage.load();
+        mainPage.login(USERNAME, PASSWORD);
+        accountListPage.openPage();
         accountListPage.clickNewBtn();
 
         newAccountModal.create(account);
         newAccountModal.clickSaveBtn();
 
-        Assert.assertTrue(accountListPage.isTextAccountName("Test Account Name"));
+        Assert.assertTrue(accountListPage.isAccountNameTextDisplayed("Test Account Name"));
     }
 }

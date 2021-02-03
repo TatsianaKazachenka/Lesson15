@@ -1,5 +1,6 @@
 package tests;
 
+import constants.IConstantsTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,7 +11,7 @@ import pages.*;
 
 import java.util.concurrent.TimeUnit;
 
-public class BaseTest {
+public class BaseTest implements IConstantsTest {
     WebDriver driver;
 
     AccountListPage accountListPage;
@@ -33,7 +34,7 @@ public class BaseTest {
 
     @AfterMethod(alwaysRun = true)
     public void endTest() {
-        driver.quit();
+        //driver.quit();
     }
 
     private void initPages() {

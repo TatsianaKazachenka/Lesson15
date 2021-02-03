@@ -16,13 +16,13 @@ public class ContactTest extends BaseTest {
 
     @Test
     public void createContactTest() {
-        mainPage.login();
-        contactListPage.load();
+        mainPage.login(USERNAME, PASSWORD);
+        contactListPage.openPage();
         contactListPage.clickNewBtn();
 
         newContactModal.create(contact);
         newContactModal.clickSaveBtn();
 
-        Assert.assertTrue(contactListPage.isTextContactName("Test First Name"));
+        Assert.assertTrue(contactListPage.isContactNameTextDisplayed("Test First Name"));
     }
 }

@@ -8,18 +8,17 @@ public class MainPage extends BasePage {
         super(driver);
     }
 
-    String USERNAME = "tatsiana-um5w@force.com";
-    String PASSWORD = "qweasd123";
 
-    public void load() {
+
+    public void openPage() {
         openPage(URL_BASE);
     }
 
-    public void login() {
-        load();
+    public void login(String username, String password) {
+        openPage();
 
-        driver.findElement(By.id(("username"))).sendKeys(USERNAME);
-        driver.findElement(By.id(("password"))).sendKeys(PASSWORD);
+        driver.findElement(By.id(("username"))).sendKeys(username);
+        driver.findElement(By.id(("password"))).sendKeys(password);
         driver.findElement(By.id("Login")).click();
     }
 }
